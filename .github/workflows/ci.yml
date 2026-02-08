@@ -18,6 +18,9 @@ jobs:
           java-version: 17
           cache: maven
 
+      - name: Ensure mvnw is executable
+        run: chmod +x mvnw
+
       - name: Build & security checks (SpotBugs + OWASP Dependency-Check)
         run: ./mvnw -B verify
 
