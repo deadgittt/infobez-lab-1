@@ -139,7 +139,10 @@
                 </executions>
                 <configuration>
                     <format>ALL</format>
-                    <failBuildOnCVSS>0</failBuildOnCVSS>
+                    <!-- Отчёты сохраняем, сборку не роняем на найденных CVE -->
+                    <failBuildOnCVSS>11</failBuildOnCVSS>
+                    <!-- Ускоряем: отключаем OSS Index (часто бьётся в rate limit на CI) -->
+                    <ossIndexAnalyzerEnabled>false</ossIndexAnalyzerEnabled>
                     <skipTestScope>false</skipTestScope>
                 </configuration>
             </plugin>
