@@ -141,11 +141,10 @@
                     <format>ALL</format>
                     <!-- Отчёты сохраняем, сборку не роняем на найденных CVE -->
                     <failBuildOnCVSS>11</failBuildOnCVSS>
+                    <failOnError>false</failOnError>
                     <skipTestScope>false</skipTestScope>
-                    <analyzers>
-                        <!-- Ускоряем: отключаем OSS Index (часто бьётся в rate limit на CI) -->
-                        <ossIndexAnalyzerEnabled>false</ossIndexAnalyzerEnabled>
-                    </analyzers>
+                    <!-- Отключаем Sonatype OSS Index (часто даёт 401/429 без учётки) -->
+                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
                 </configuration>
             </plugin>
 

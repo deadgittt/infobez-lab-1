@@ -22,7 +22,7 @@ jobs:
         run: chmod +x mvnw
 
       - name: Run SpotBugs (SAST) + Dependency-Check (SCA)
-        run: ./mvnw -B verify -s $GITHUB_WORKSPACE/.mvn/settings.xml
+        run: ./mvnw -B verify -s $GITHUB_WORKSPACE/.mvn/settings.xml -DossIndexAnalyzerEnabled=false
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
 
