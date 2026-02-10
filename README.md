@@ -53,3 +53,17 @@ curl -X POST http://localhost:8080/api/data \
 - Артефакты отчётов:  
   - `target/spotbugsXml.xml` (SAST)  
   - `target/dependency-check-report.html` (SCA)  
+- Скриншоты для отчёта:  
+  - SpotBugs (SAST): `docs/screenshots/spotbugs.png`  
+  - Dependency-Check (SCA): `docs/screenshots/dependency-check.png`  
+  - Успешный запуск pipeline: `docs/screenshots/pipeline-success.png`
+
+### Скрины
+![SpotBugs (SAST)](docs/screenshots/spotbugs.png)
+SpotBugs (SAST)
+
+![Dependency-Check (SCA)](docs/screenshots/dependency-check.png)
+Dependency-Check (SCA)
+
+<!-- Добавьте файл и раскомментируйте строку ниже, когда будет скрин успешного pipeline -->
+<!-- ![Pipeline success](docs/screenshots/pipeline-success.png) -->
