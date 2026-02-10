@@ -45,6 +45,7 @@ curl -X POST http://localhost:8080/api/data \
 - **XSS**: входные строки экранируются в `TrackService` (`HtmlUtils.htmlEscape`), ответы -- JSON; заголовки `X-XSS-Protection: 1; mode=block` и `Content-Security-Policy: script-src 'self'`.
 - **Валидация входных данных**: Bean Validation (`@NotBlank`, `@Size`, `@PositiveOrZero`) + централизованный `RestExceptionHandler`.
 - **Секреты**: JWT ключ берётся из переменной окружения `JWT_SIGNING_KEY`; встроенный тестовый ключ можно заменить перед развёртыванием.
+- **Актуальные версии зависимостей**: принудительно подняты Log4j до 2.25.3 и Tomcat до 10.1.47 через свойства `log4j2.version` и `tomcat.version` в `pom.xml` — закрыты последние CVE из отчёта Dependency-Check.
 
 ## CI/CD и отчёты
 - Workflow: `.github/workflows/ci.yml` -- триггеры `push`/`pull_request`.
